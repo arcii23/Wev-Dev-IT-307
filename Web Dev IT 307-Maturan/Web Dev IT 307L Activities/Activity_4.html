@@ -1,0 +1,40 @@
+<DOCUMENT! html>
+<html>
+<head>
+<style>
+body{
+background-color:gray;
+}
+h2{
+color:purple;}
+</style>
+<script>Activity 4: Loop </script> 
+</head>   
+  <h2>Activity 4: Looping </h2>
+<body>
+    
+<input type="text" name="row" id="row" ><br/><br/>
+<input type="submit" name="submit" value="Generate" onclick="loopRows()"><br/><br/>
+
+<div id="rows">Display Rows</div>
+<script>
+    
+function loopRows() {
+    
+    
+   var row = parseInt(document.getElementById("row").value);
+   var text="";
+    var c;
+    for( c = 1 ; c <= row ; c++)
+        {
+        text +=(c)+ "Email: <input type='text' name='text1'> Password:<input type='text' name='text1'></br>";
+             
+        }
+         
+        document.getElementById("rows").innerHTML=text;
+    
+    loopRows();
+}
+</script>    
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///C:/Users/Trisha%20Lopez/Desktop/Class%20Attendance%20App/Attendance1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Class Attendance</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./ClassAttendance_files/bootstrap.min.css">
+  <script src="./ClassAttendance_files/jquery.min.js.download"></script>
+  <script src="./ClassAttendance_files/bootstrap.min.js.download"></script>
+<style>
+
+caption{
+  color: black;
+  }
+  table {
+    width:95%;
+
+}
+}
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th  {
+    background-color: black;
+    color: white;
+}
+table{
+  margin-left: 10px;
+</style></head>
+
+
+<body>
+	
+<div class="mobile-container">
+        <div class="row text-center  ">
+            <div class="col-sm-12">
+                <br>
+            </div>
+        </div>
+        
+         <div class="row">
+ 
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default" style="background-color: #ffcccc">
+                            <div class="panel-heading">
+                        <strong style="color:green;">Class Attendance</strong>  
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                <div class="form-group">
+                                <label class="col-sm-offset-2 control-label"></label> 
+                                <div class="col-sm-6 inputGroupContainer">
+                                  <div class="input-group">
+                              <label for="course" style="font-size: 10px;">Date</label>
+                                  <input type="date" class="form-control" name="date" id="d">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                              <label class="col-sm-12 control-label"></label>  
+                              <div class="col-sm-12 inputGroupContainer">
+                              <div class="input-group">
+                               <label for="course" style="font-size: 10px;">Time</label>
+                                  <input type="time" class="form-control" name="time" id="t">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                              <label class="col-sm-12 control-label"></label>  
+                              <div class="col-sm-12 inputGroupContainer">
+                              <div class="input-group">
+                              <label for="course" style="font-size: 12px ">Select Course/Year Level
+                                  <select name="course" class="form-control selectpicker" style="margin-left: 2px;">
+                                    <option value="">Course/Yr</option>
+                                    <option>BSINFO-1</option>
+                                    <option>BSINFO-2</option>
+                                    <option>BSINFO-3</option>
+                                    <option>BSINFO-4</option>
+                                    </select>
+                                  
+                                </label></div>
+                                </div>
+                                <div class="form-group">
+                              <label class="col-sm-12 control-label"></label>
+                              <div class="col-sm-12 inputGroupContainer">
+                              <div class="input-group">
+                              <select name="section" class="form-control selectpicker" style="margin-left: 2px; width: 100px">
+                                    <option value="">Section</option>
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                   </select>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                              <label class="col-sm-12 control-label"></label>  
+                              <div class="col-sm-12 inputGroupContainer">
+                              <div class="input-group">
+                              <label for="course" style="font-size: 10px ">Select Course/Year Level
+                                  <select name="subject" class="form-control selectpicker" style="margin-left: 2px;">
+                                    <option value="">Subject</option>
+                                    <option>Web Dev</option>
+                                    <option>Web Dev Lab</option>
+                                    <option>FE 403</option>
+                                    <option>Software Eng</option>                                  
+                                  </select>
+                                
+                                </label></div>
+                              </div>
+
+                               <div class="form-group">
+                            <table style="width:95%">
+                           </table><table id="t01">
+                              <caption><strong><center>Attendance Sheet</center></strong></caption>
+                              <tbody><tr>
+                                <th>Last Name</th>
+                                <th>First Name</th>    
+                                <th>Present</th>
+                              </tr>
+                              <tr>
+                                <td>Abad</td>
+                                <td>Sherra</td>    
+                                <td>
+                              <input type="checkbox" value="">
+                            </td>
+                              </tr>
+                              <tr>
+                              
+                                <td>Baron</td>
+                                <td>Jack</td>    
+                                <td><input type="checkbox" value=""></td>
+                              </tr>
+                              <tr>
+                              
+                                <td>Cruz</td>
+                                <td>Kim</td>    
+                                <td><input type="checkbox" value=""></td>
+                              </tr>
+
+                              <tr>
+                              
+                                <td>Maturan</td>
+                                <td>Arcelyn</td>    
+                                <td><input type="checkbox" value=""></td>
+                              </tr>
+                              <tr>
+                              
+                                <td>Pascual</td>
+                                <td>Lance</td>    
+                                <td><input type="checkbox" value=""></td>
+                              </tr>
+
+
+                            </tbody></table>  
+                          
+                              <div class="form-group"> 
+                                <label class="col-sm-10 col-sm-offset-10 control-label"></label>
+                                
+                                <div class="col-sm-10 col-sm-offset-1 ">
+                                  <button type="button" class="btn btn-success">Save</button>
+                                  <a href="index.html"  type="button" class="btn btn-danger">Cancel</button></a>
+                              </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+  
+</div></div></div></form></div></div></div></div></div></body></html>

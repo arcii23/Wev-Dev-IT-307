@@ -1,0 +1,57 @@
+<DOCUMENT! html>
+<html>
+<title>Activity 5</title>
+<head>
+<h2>Activity 5: Delete Row</h2>
+<style>
+body{
+background-color:orange;
+}
+</style>
+    <script>
+ 
+    var i;
+function deleteRow(a){
+   
+    document.getElementById(a).innerHTML="";
+    
+    
+}
+function calculate() {
+    
+     var x = parseInt(document.getElementById("box1").value);
+  
+    var text="";
+  
+    for( i = 1; i<=x ; i++)
+        {
+        
+          
+                   var numrow="rowNum"+(i);
+                    text +='<div id="rowNum'+(i)+'">' + (i)+'. email: <input type="text" name="text1"> password:<input type="text" name="text1"><input type="button" name="button" value="delete" onclick="deleteRow('+"'"+numrow+"'"+')"></div>';
+                
+     
+       
+       
+        }
+        
+        document.getElementById("rows").innerHTML=text;
+    
+
+}
+    
+</script>
+<style>
+    
+</style>    
+</head>    
+<body>
+
+    <input type="text" name="box1" id="box1" onkeyup="calculate()" placeholder="Enter a number">
+
+<br/><br/> 
+       
+<div id="rows">Activity 5</div>
+
+</body>
+</html>

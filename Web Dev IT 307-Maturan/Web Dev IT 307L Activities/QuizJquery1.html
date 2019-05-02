@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JQUERY</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  
+  <style>
+		div{
+		border:solid blue;
+		}
+      body{
+          background-color: pink;
+      }
+      p{
+          color:darkblue;
+      }
+      h1{
+          color:darkred;
+      }
+	</style>
+  
+  <script>
+	$(document).ready(function(){
+		$("#hide").click(function(){
+		$("p").hide();
+		})
+	})
+	</script>
+	<script>
+	$(document).ready(function(){
+		$("#show").click(function(){
+		$("p").show();
+		})
+	})
+	</script>
+	
+ </head>
+ <body>
+ 
+<div class="container-fluid">
+  <div class="row">
+    <div align="center" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="background-color: mediumaquamarine; height:250px;">
+	<h1 align="center">Lorem Ipsum</h1>
+	<p align="justify"> 
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniaam, quis nostrud exercitation ullamco laboris
+			nisi ut aliquip ex ea commodo consequant. Duis aute irure dolor in reprehenderit
+			in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+			anim id est laborum.
+			</p><br/><br/>
+			
+		<input type="submit" name="submit" value="Show" id="show" onclick="click()"/>
+		<input type="submit" name="submit" value="Hide" id="hide" onclick="hide()"/>
+		</div>
+	
+	</div>
+</div>
+	
+</body>
+</html>

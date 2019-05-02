@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Activity 2 Calculate two value </title>
+    <style type="text/css">
+        body {
+	margin: 30px;
+	background-color:lightgreen;
+	}
+	h2{
+	color: purple;}
+    </style>
+</head>
+<h2>Activity 2: Calculate two value</h2>
+<body>
+<form>
+Enter first number: <input type="text" id="firstNumber"/> </br></br>
+Enter second number: <input type ="text" id="secondNumber"/> </br></br>
+
+<input type="button" onClick="plusBy()" value="Sum"/>
+<input type="button" onClick="minusBy()" value="Difference"/>
+<input type="button" onClick="multiplyBy()" value="Product"/>
+<input type="button" onClick="dividedBy()" value="Qoutient"/>
+
+</form>
+<p>
+<div id = "result"></div>
+</p>
+<script>
+function plusBy()
+{
+	var num1 = Number(document.getElementById("firstNumber").value);
+	var num2 = Number(document.getElementById("secondNumber").value);
+	document.getElementById("result").innerHTML = 'The sum is ' + (num1 + num2);
+}
+function minusBy()
+{
+	var num1 = Number(document.getElementById("firstNumber").value);
+	var num2 = Number(document.getElementById("secondNumber").value);
+	document.getElementById("result").innerHTML = 'The difference is ' + (num1 - num2);
+}
+function multiplyBy()
+{
+	var num1 = Number(document.getElementById("firstNumber").value);
+	var num2 = Number(document.getElementById("secondNumber").value);
+	document.getElementById("result").innerHTML = 'The product is ' + (num1 * num2);
+}
+function dividedBy()
+{
+	var num1 = Number(document.getElementById("firstNumber").value);
+	var num2 = Number(document.getElementById("secondNumber").value);
+	document.getElementById("result").innerHTML = 'The qoutient is ' + (num1 / num2);
+}
+</script>
+
+</body>
+</html>

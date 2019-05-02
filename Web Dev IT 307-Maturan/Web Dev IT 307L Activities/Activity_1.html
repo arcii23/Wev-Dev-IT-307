@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+background-color: pink;
+}
+h2{
+color:purple;
+}
+</style>
+<title> Activity 1: Display Message</title>
+</head>
+<h2>Activity 1: Display Message</h2>
+<script>
+function displayMessage()
+{
+document.getElementById("msg2").innerHTML = document.getElementById("msg1").innerHTML;
+}
+</script>
+<body>
+<div id="msg1" style="border: 2px solid red"> Maturan Arcelyn</div>
+<div id="msg2" style="border: 2px solid blue"></div>
+</div>
+<script>
+displayMessage();
+</script>
+</body>
+</html>

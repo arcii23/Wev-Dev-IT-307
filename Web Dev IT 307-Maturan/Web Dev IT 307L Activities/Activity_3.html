@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.0 Transitional//EN">
+<html>
+<head>
+<style>
+h2{
+color: purple;
+}
+div{
+border: 2px solid pink;
+outline: 10px solid gray;
+margin: auto;
+padding: 20px;
+width: 20%;
+float: left;
+text-align: center;
+}
+body{
+background-color: lightblue;
+}
+</style>
+
+<title>Activity 3: Calculate using drop down option</title>
+
+</head>
+<h2>Activity 3: Calculate using drop down option</h2>
+<script>
+    
+function calc()
+{
+     var oper = document.getElementById("operator").value;
+    
+    if(oper == "Sum")
+        {
+           
+           document.getElementById("result").innerHTML  = parseInt(document.getElementById("n1").value) + parseInt(document.getElementById("n2").value);
+ 
+        }
+    if(oper == "Difference")
+    {
+        document.getElementById("result").innerHTML  = parseInt(document.getElementById("n1").value) - parseInt(document.getElementById("n2").value);
+    }
+	 if(oper == "Product")
+    {
+        document.getElementById("result").innerHTML  = parseInt(document.getElementById("n1").value) * parseInt(document.getElementById("n2").value);
+    }
+	 if(oper == "Qoutient")
+    {
+        document.getElementById("result").innerHTML  = parseInt(document.getElementById("n1").value) / parseInt(document.getElementById("n2").value);
+    }
+         	
+}
+       
+</script>
+
+
+<body>
+
+Enter first value: <input type = "TEXT" name = "n1" id = "n1"><br><br>
+Enter second value: <input type = "TEXT" name = "n2" id = "n2"><br><br>
+ 
+    
+<select id = "operator" >
+    <option value="Sum">+</option>
+    <option value="Difference">-</option>
+	<option value="Product">x</option>
+	<option value="Qoutient">/</option>
+</select>
+    
+    
+    <input type = "button" onclick="calc()" value="="/><br><br>
+
+ <div id="result"></div>
+     
+    
+    
+</body>
+</html>
