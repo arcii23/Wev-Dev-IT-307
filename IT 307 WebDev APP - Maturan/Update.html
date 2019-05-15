@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Record</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+     function errorMessage(id){
+       $(id).addClass("highlight");
+    }
+function pageLoad() {
+   
+
+
+    // get the URL parameter item
+let url = new URL(window.location);
+let searchParams = new URLSearchParams(url.search);
+var parameterItem = searchParams.get('item');
+
+
+var hasParam=false;
+
+var studentArray = JSON.parse(localStorage.getItem('studentApp'));
+
+for (var x in studentArray) {
+
+  if(x==parameterItem){
+$("#roleNo").val(studentArray[x].roleNo);
+$("#fname").val(studentArray[x].fname);
+$("#lname").val(studentArray[x].lname);
+$("#course").val(studentArray[x].course);
+$("#yrsect").val(studentArray[x].yrsect);
+$("#subject").val(studentArray[x].subject); 
+hasParam =true;        
+  }
+    
+
+}
+if(!hasParam){
+location.href = "appHome.html?ms=invalidItem";
+}
+
+}
+   
+
+
+   $(document).ready(function(){
+
+  $("form").submit(function(){ //if form is sumitted
+  
+  //get the data from the form
+    var roleNo = $("#roleNo").val();
+   var  fname= $("#fname").val();
+   var  lname= $("#lname").val();
+   var  course= $("#course").val();
+   var  yrsect= $("#yrsect").val();
+   var  subject= $("#subject").val();
+     
+
+      var hasError=false;
+//check if formfields has data
+if ($.trim(roleNo).length == 0){
+    errorMessage("#roleNo");
+    hasError =true;
+     
+}
+if ($.trim(fname).length == 0){
+    errorMessage("#fname");
+    hasError =true;
+}
+if ($.trim(lname).length == 0){
+    errorMessage("#lname");
+    hasError =true;
+}
+if ($.trim(course).length == 0){
+    errorMessage("#course");
+    hasError =true;
+}
+if ($.trim(yrsect).length == 0){
+    errorMessage("#yrsect");
+    hasError =true;
+}
+if ($.trim(subject).length == 0){
+    errorMessage("#subject");
+    hasError =true;
+}
+
+  if(hasError){
+     $("#message").show();
+    return false;
+  }
+
+
+   // get the URL parameter item
+let url = new URL(window.location);
+let searchParams = new URLSearchParams(url.search);
+var parameterItem = searchParams.get('item');
+
+
+ //retrieved the data from localstorage and save it to an object variable
+    var studentArray = JSON.parse(localStorage.getItem('studentApp'));
+
+   // create an object based on the data on the form
+    var student = {roleNo:roleNo, fname:fname, lname:lname, course:course, yrsect:yrsect, subject:subject};
+ 
+var studArray=[];
+
+if(studentArray!=null){ 
+   for (var x in studentArray) {
+  
+     
+    if(x==parameterItem){
+         studArray.push(student);
+     }
+     else{
+       var eachstud = {roleNo:studentArray[x].roleNo, fname:studentArray[x].fname, lname:studentArray[x].lname, course:studentArray[x].course, yrsect:studentArray[x].yrsect, subject:studentArray[x].subject};
+        studArray .push(eachstud);
+       }
+      
+  }
+}
+  
+       localStorage.setItem('studentApp', JSON.stringify(studArray));
+     
+    alert("Record Updated Successfully!");
+    
+location.href = "appHome.html";
+    
+    return false;
+  });
+
+ 
+
+});
+
+  </script>
+  
+</head>
+ 
+<body onload="pageLoad()" >
+
+<div class="container">
+  <br/>
+   <div class="row">
+ 
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default" style="background-color: #ffcccc">
+                            <div class="panel-heading" style="background: beige;">
+                        <strong style="color:green;">Update Record</strong>  
+                            </div>
+                            <div class="panel-body">
+   
+ 
+  <div id="message">
+  <div class="alert alert-danger">
+  <strong>Error!</strong> Forms cannot be empty.
+</div></div>
+  <form action="">
+    <div class="form-group">
+      <label for="roleNo">Role No:</label>
+      <input type="text" class="form-control" id="roleNo"  placeholder="Role Number" name="roleNo"  >
+    </div>
+    <div class="form-group">
+      <label for="fname">Firstname:</label>
+      <input type="text" class="form-control" id="fname" placeholder="Firstname" name="fname"  >
+    </div>
+       <div class="form-group">
+      <label for="lname">Lastname:</label>
+      <input type="text" class="form-control" id="lname" placeholder="Lastname" name="lname"  >
+    </div>
+     <div class="form-group">
+      <label for="course">Course:</label>
+      <input type="text" class="form-control" id="course" placeholder="Course" name="course"  >
+    </div>
+     <div class="form-group">
+      <label for="yrsect">Year & Section:</label>
+      <input type="text" class="form-control" id="yrsect" placeholder="Year&Section" name="yrsect"  >
+    </div>
+     <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject"  >
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="appHome.html" class="btn btn-primary" role="button">Back</a>
+  </form>
+</div>
+	 
+</body>
+</html>

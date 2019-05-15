@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Record</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body  >
+
+<script >
+ 
+// get the URL parameter item
+let url = new URL(window.location);
+let searchParams = new URLSearchParams(url.search);
+var parameterItem = searchParams.get('item');
+
+
+var studentArray = JSON.parse(localStorage.getItem('studentApp'));
+
+
+
+
+studentArray.splice(parameterItem,1);
+
+localStorage.setItem('studentApp', JSON.stringify(studentArray));
+
+
+ location.href = "appHome.html";
+    </script>
+</body>
+
+
+</html>
